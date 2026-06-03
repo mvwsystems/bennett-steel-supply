@@ -45,11 +45,13 @@ nav {
   border-bottom: 1px solid rgba(29,168,199,0.15);
 }
 .nav-logo {
+  display: flex; align-items: center; gap: 0.7rem;
   font-family: var(--font-display); font-size: 1.4rem; font-weight: 800;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--off-white);
   text-decoration: none; white-space: nowrap; flex-shrink: 0;
 }
 .nav-logo span { color: var(--teal); }
+.nav-logo-img { height: 36px; width: auto; display: block; flex-shrink: 0; }
 .nav-links {
   display: flex; gap: 3rem; list-style: none;
   position: absolute; left: 50%; transform: translateX(-50%);
@@ -422,6 +424,7 @@ footer {
   letter-spacing: 0.14em; text-transform: uppercase; color: var(--off-white);
 }
 .foot-brand span { color: var(--teal); }
+.foot-logo-img { height: 48px; width: auto; display: block; margin-bottom: 0.4rem; }
 .foot-sub {
   font-family: var(--font-mono); font-size: 0.63rem; color: var(--steel-gray);
   letter-spacing: 0.06em; margin-top: 0.35rem;
@@ -553,7 +556,7 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
 
 <!-- ═══ NAV ═══ -->
 <nav>
-  <a class="nav-logo" href="#">Bennett <span>Steel</span> Supply</a>
+  <a class="nav-logo" href="#"><img src="/assets/logo/ReelSteelLogo.png" alt="Bennett Steel Supply logo" class="nav-logo-img">Bennett <span>Steel</span> Supply</a>
   <ul class="nav-links">
     <li><a href="#products">Products</a></li>
     <li><a href="#about">About</a></li>
@@ -898,7 +901,7 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div>
-    <div class="foot-brand">Bennett <span>Steel</span> Supply</div>
+    <img src="/assets/logo/ReelSteelLogo.png" alt="Bennett Steel Supply logo" class="foot-logo-img">
     <div class="foot-sub">Malabar, FL &nbsp;&middot;&nbsp; Nationwide Delivery &nbsp;&middot;&nbsp; hello@reelsteel.com</div>
   </div>
   <div class="foot-certs" id="certifications">
