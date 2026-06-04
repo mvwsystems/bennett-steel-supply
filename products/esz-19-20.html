@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESZ-19/20-700 | Hot Rolled Sheet Pile | Bennett Steel Supply</title>
+<link rel="icon" href="/assets/logo/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#1DA8C7;--gold:#F5C842;--off-white:#F4F1EB;
+  --steel-gray:#8A9299;--charcoal:#1A1C1E;--near-black:#0D0F10;
+  --fd:'Barlow Condensed','Arial Narrow',sans-serif;
+  --fb:'Barlow','Arial',sans-serif;
+  --fm:'Space Mono','Courier New',monospace;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--near-black);color:var(--off-white);font-family:var(--fb);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(10,12,13,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(29,168,199,.15)}
+.nav-logo{display:flex;align-items:center;gap:.6rem;font-family:var(--fd);font-size:1.15rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--off-white);text-decoration:none}
+.nav-logo img{height:30px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.4))}
+.nav-logo span{color:var(--teal)}
+.nav-back{font-family:var(--fm);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-gray);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--teal)}
+.hero{padding:8rem 3rem 4.5rem;background:linear-gradient(135deg,#0D0F10 0%,#0F1820 55%,#0B1C28 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(29,168,199,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(29,168,199,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:860px}
+.type-badge{font-family:var(--fm);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(29,168,199,.35);padding:.3rem .85rem;display:inline-block;margin-bottom:1.2rem}
+h1.spec-h1{font-family:var(--fd);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;text-transform:uppercase;line-height:.93;color:var(--off-white);margin-bottom:.75rem}
+h1.spec-h1 .t{color:var(--teal)}
+.spec-sub{font-size:.98rem;color:var(--steel-gray);margin-bottom:2rem;line-height:1.65;max-width:560px}
+.pills{display:flex;gap:.55rem;flex-wrap:wrap}
+.pill{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--off-white);background:rgba(29,168,199,.08);border:1px solid rgba(29,168,199,.22);padding:.28rem .7rem}
+.s-label{font-family:var(--fm);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem}
+.section-head{font-family:var(--fd);font-size:1.8rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--off-white);margin-bottom:2.5rem}
+.section-head .t{color:var(--teal)}
+/* diagram */
+.diagram{background:var(--charcoal);padding:4.5rem 3rem;border-top:1px solid rgba(29,168,199,.1);border-bottom:1px solid rgba(29,168,199,.1)}
+.diagram-inner{max-width:680px;margin:0 auto;text-align:center}
+.spec-svg{width:100%;max-width:580px;display:block;margin:0 auto;overflow:visible}
+.pl{stroke:var(--off-white);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pa{stroke:var(--teal);stroke-width:2.5;fill:none;stroke-linecap:round}
+.dl{stroke:rgba(138,146,153,.45);stroke-width:1;stroke-dasharray:4,3;fill:none}
+.dlabel{font-family:'Space Mono',monospace;font-size:12px;fill:var(--steel-gray);opacity:0;transition:opacity .7s ease}
+.dlabel.show{opacity:1}
+/* table */
+.tbl-section{padding:4.5rem 3rem;background:var(--near-black)}
+.tbl-wrap{max-width:1080px;margin:0 auto}
+.tbl-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+.tbl-hint{font-family:var(--fm);font-size:.6rem;color:var(--steel-gray);letter-spacing:.05em}
+.unit-toggle{display:flex;border:1px solid rgba(29,168,199,.25);overflow:hidden}
+.utb{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1.1rem;background:none;border:none;color:var(--steel-gray);cursor:pointer;transition:all .2s}
+.utb.on{background:var(--teal);color:var(--near-black)}
+.spec-tbl{width:100%;border-collapse:collapse;font-family:var(--fb);font-size:.87rem}
+.spec-tbl thead tr{border-bottom:2px solid rgba(29,168,199,.25)}
+.spec-tbl thead th{font-family:var(--fm);font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);padding:.7rem .9rem;text-align:left;font-weight:400;white-space:nowrap;line-height:1.5}
+.spec-tbl tbody tr{border-bottom:1px solid rgba(29,168,199,.07);transition:background .2s;border-left:3px solid transparent;cursor:default}
+.spec-tbl tbody tr:hover{background:rgba(29,168,199,.07);border-left-color:var(--teal)}
+.spec-tbl tbody td{padding:.95rem .9rem;color:var(--off-white)}
+.spec-tbl td:first-child{font-family:var(--fd);font-size:1.05rem;font-weight:800;letter-spacing:.04em;color:var(--teal)}
+.m{display:none}.i{display:inline}
+.metric .m{display:inline}.metric .i{display:none}
+/* stats */
+.stats{padding:4.5rem 3rem;background:linear-gradient(140deg,#0D0F10,#0B1822);border-top:1px solid rgba(29,168,199,.08)}
+.stats-inner{max-width:860px;margin:0 auto}
+.scard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.scard{border:1px solid rgba(29,168,199,.15);padding:2.2rem 1.8rem;background:rgba(29,168,199,.03);position:relative;overflow:hidden;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.scard.vis{opacity:1;transform:translateY(0)}
+.scard:nth-child(2){transition-delay:.12s}
+.scard:nth-child(3){transition-delay:.24s}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+.snum{font-family:var(--fd);font-size:3.2rem;font-weight:900;color:var(--off-white);line-height:1}
+.sunit{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-top:.2rem}
+.slbl{font-family:var(--fm);font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:var(--steel-gray);margin-top:.45rem}
+/* cta */
+.cta{background:var(--charcoal);padding:3.5rem 3rem;border-top:1px solid rgba(29,168,199,.12);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.cta h2{font-family:var(--fd);font-size:2rem;font-weight:900;text-transform:uppercase;color:var(--off-white);letter-spacing:.04em}
+.cta h2 span{color:var(--teal)}
+.btn{font-family:var(--fd);font-size:.95rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--teal);color:var(--near-black);padding:.85rem 2.2rem;border:none;cursor:pointer;text-decoration:none;display:inline-block;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .2s}
+.btn:hover{background:var(--gold)}
+footer{background:var(--near-black);border-top:1px solid rgba(29,168,199,.1);padding:1.8rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+footer img{height:32px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.35))}
+.foot-info{font-family:var(--fm);font-size:.58rem;color:var(--steel-gray);letter-spacing:.05em;line-height:1.7}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-inner>*{animation:fadeUp .6s ease both}
+.hero-inner .type-badge{animation-delay:0s}
+.hero-inner h1{animation-delay:.1s}
+.hero-inner .spec-sub{animation-delay:.2s}
+.hero-inner .pills{animation-delay:.3s}
+@media(max-width:768px){nav,footer{padding:1rem 1.5rem}.hero,.diagram,.tbl-section,.stats,.cta{padding:4rem 1.5rem}}
+@media(max-width:480px){.scard-grid{grid-template-columns:1fr}.spec-tbl{font-size:.75rem}.spec-tbl thead th,.spec-tbl tbody td{padding:.5rem .4rem}.cta{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/assets/logo/ReelSteelLogo.png" alt="Bennett Steel Supply">Bennett <span>Steel</span> Supply</a>
+  <a class="nav-back" href="/#products">← Products</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="type-badge">Hot Rolled Sheet Pile</div>
+    <h1 class="spec-h1">ESZ-19/20<br><span class="t">— 700</span></h1>
+    <p class="spec-sub">Z-section hot rolled sheet pile. 700 mm interlocking width, 421 mm section height. Available new, used, or rental — domestic &amp; foreign steel.</p>
+    <div class="pills">
+      <div class="pill">A572 Grade 50 / 60</div>
+      <div class="pill">Width: 27.56" / 700 mm</div>
+      <div class="pill">Height: 16.57" / 421 mm</div>
+      <div class="pill">New · Used · Rental</div>
+    </div>
+  </div>
+</section>
+
+<section class="diagram">
+  <div class="diagram-inner">
+    <div class="s-label">Cross-Section Profile</div>
+    <div class="section-head">Section <span class="t">Geometry</span></div>
+    <svg class="spec-svg" viewBox="0 0 560 268" xmlns="http://www.w3.org/2000/svg">
+      <!-- left interlock hook -->
+      <path class="pa" d="M 58,212 C 36,212 36,192 58,192"/>
+      <!-- bottom left flange -->
+      <line class="pl" x1="58" y1="212" x2="136" y2="212"/>
+      <line class="pl" x1="58" y1="192" x2="136" y2="192"/>
+      <!-- inclined web -->
+      <line class="pl" x1="136" y1="212" x2="424" y2="68"/>
+      <line class="pl" x1="136" y1="192" x2="424" y2="48"/>
+      <!-- top right flange -->
+      <line class="pl" x1="424" y1="68" x2="502" y2="68"/>
+      <line class="pl" x1="424" y1="48" x2="502" y2="48"/>
+      <!-- right interlock hook -->
+      <path class="pa" d="M 502,48 C 524,48 524,68 502,68"/>
+      <!-- dimension W -->
+      <line class="dl" x1="58" y1="236" x2="502" y2="236"/>
+      <line class="dl" x1="58" y1="212" x2="58" y2="242"/>
+      <line class="dl" x1="502" y1="68" x2="502" y2="242"/>
+      <text class="dlabel" x="280" y="254" text-anchor="middle">w = 27.56 in (700 mm)</text>
+      <!-- dimension H -->
+      <line class="dl" x1="26" y1="48" x2="50" y2="48"/>
+      <line class="dl" x1="26" y1="212" x2="50" y2="212"/>
+      <line class="dl" x1="26" y1="52" x2="26" y2="208"/>
+      <text class="dlabel" x="12" y="132" text-anchor="middle" transform="rotate(-90,12,132)">h = 16.57 in (421 mm)</text>
+      <!-- dimension t -->
+      <line class="dl" x1="296" y1="130" x2="318" y2="112"/>
+      <text class="dlabel" x="324" y="110" text-anchor="start">t = 0.375 – 0.394 in</text>
+    </svg>
+  </div>
+</section>
+
+<section class="tbl-section">
+  <div class="tbl-wrap">
+    <div class="s-label">Structural Properties</div>
+    <div class="section-head" style="margin-bottom:.5rem">Section <span class="t">Data</span></div>
+    <div class="tbl-top">
+      <span class="tbl-hint">Hover a row to highlight &mdash; toggle units at right</span>
+      <div class="unit-toggle">
+        <button class="utb on" data-u="i">Imperial</button>
+        <button class="utb" data-u="m">Metric</button>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="spec-tbl" id="tbl1">
+        <thead><tr>
+          <th>Section</th>
+          <th>Width<br><span class="i">in</span><span class="m">mm</span></th>
+          <th>Height<br><span class="i">in</span><span class="m">mm</span></th>
+          <th>Thickness<br><span class="i">in</span><span class="m">mm</span></th>
+          <th>Wt. Pile<br><span class="i">lb/ft</span><span class="m">kg/m</span></th>
+          <th>Wt. Wall<br><span class="i">lb/ft²</span><span class="m">kg/m²</span></th>
+          <th>Section Mod.<br><span class="i">in³/ft</span><span class="m">cm³/m</span></th>
+          <th>Moment of Inertia<br><span class="i">in⁴/ft</span><span class="m">cm⁴/m</span></th>
+          <th>Coating (both)<br><span class="i">ft²/ft</span><span class="m">m²/m</span></th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td>ESZ-19-700</td>
+            <td><span class="i">27.56</span><span class="m">700</span></td>
+            <td><span class="i">16.57</span><span class="m">421</span></td>
+            <td><span class="i">0.375</span><span class="m">9.5</span></td>
+            <td><span class="i">54.3</span><span class="m">80.8</span></td>
+            <td><span class="i">23.6</span><span class="m">115.4</span></td>
+            <td><span class="i">34.9</span><span class="m">1,875</span></td>
+            <td><span class="i">288.7</span><span class="m">39,420</span></td>
+            <td><span class="i">6.02</span><span class="m">1.84</span></td>
+          </tr>
+          <tr>
+            <td>ESZ-20-700</td>
+            <td><span class="i">27.56</span><span class="m">700</span></td>
+            <td><span class="i">16.57</span><span class="m">421</span></td>
+            <td><span class="i">0.394</span><span class="m">10.0</span></td>
+            <td><span class="i">56.5</span><span class="m">84.1</span></td>
+            <td><span class="i">24.6</span><span class="m">120.2</span></td>
+            <td><span class="i">36.1</span><span class="m">1,940</span></td>
+            <td><span class="i">299.2</span><span class="m">40,860</span></td>
+            <td><span class="i">6.02</span><span class="m">1.84</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-inner">
+    <div class="s-label">ESZ-19 Reference Values</div>
+    <div class="section-head">By the <span style="color:var(--gold)">Numbers</span></div>
+    <div class="scard-grid">
+      <div class="scard" data-t="54.3">
+        <div class="snum" data-c>0</div>
+        <div class="sunit">lb / ft</div>
+        <div class="slbl">Weight per Pile</div>
+      </div>
+      <div class="scard" data-t="34.9">
+        <div class="snum" data-c>0</div>
+        <div class="sunit">in³ / ft</div>
+        <div class="slbl">Section Modulus</div>
+      </div>
+      <div class="scard" data-t="288.7">
+        <div class="snum" data-c>0</div>
+        <div class="sunit">in⁴ / ft</div>
+        <div class="slbl">Moment of Inertia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Need <span>ESZ Pricing</span>?</h2>
+  <a href="/#quote" class="btn">Request a Quote &rarr;</a>
+</div>
+
+<footer>
+  <a href="/"><img src="/assets/logo/ReelSteelLogo.png" alt="Bennett Steel Supply"></a>
+  <div class="foot-info">321-464-2283 &nbsp;&middot;&nbsp; ABennett.ReelSteel@gmail.com &nbsp;&middot;&nbsp; www.reelsteelusa.com</div>
+</footer>
+
+<script>
+// unit toggle
+document.querySelectorAll('.utb').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.utb').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  document.querySelectorAll('.spec-tbl').forEach(t=>t.classList.toggle('metric',b.dataset.u==='m'));
+}));
+// dimension label reveal on scroll
+const svgEl=document.querySelector('.spec-svg');
+new IntersectionObserver(entries=>{
+  if(!entries[0].isIntersecting)return;
+  document.querySelectorAll('.dlabel').forEach((el,i)=>setTimeout(()=>el.classList.add('show'),300+i*250));
+},{threshold:.35}).observe(svgEl);
+// animated counters
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('vis');
+    const el=e.target.querySelector('[data-c]'),tgt=parseFloat(e.target.dataset.t),t0=performance.now();
+    (function tick(now){
+      const p=Math.min((now-t0)/1300,1),v=tgt*(1-Math.pow(1-p,3));
+      el.textContent=tgt>=10?Math.round(v):v.toFixed(1);
+      if(p<1)requestAnimationFrame(tick);
+      else el.textContent=Number.isInteger(tgt)?tgt:tgt.toFixed(1);
+    })(t0);
+  });
+},{threshold:.4}).observe(document.querySelector('.scard-grid'));
+</script>
+</body>
+</html>

@@ -415,6 +415,16 @@ h2.s-title .g { color: var(--gold); }
 }
 .form-btn:hover { background: var(--gold); transform: translateY(-1px); }
 
+/* ─── SPEC SHEET LINKS ─── */
+.spec-links { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1.25rem; }
+.spec-link {
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--teal); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;
+  transition: color 0.2s;
+}
+.spec-link::before { content: '↗'; font-size: 0.65rem; }
+.spec-link:hover { color: var(--gold); }
+
 /* ─── FOOTER ─── */
 footer {
   background: var(--near-black);
@@ -709,6 +719,9 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
         Domestic / Foreign Available
       </div>
       <span class="prod-tag">New + Used / Rental</span>
+      <div class="spec-links">
+        <a href="/products/pz-ps.html" class="spec-link">PZ &amp; PS Spec Sheet</a>
+      </div>
     </div>
     <div class="prod-card fu d2">
       <div class="prod-icon">ZZ</div>
@@ -720,6 +733,11 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
         A572 Grade 50 &amp; 60
       </div>
       <span class="prod-tag">New + Used / Rental</span>
+      <div class="spec-links">
+        <a href="/products/esz-19-20.html" class="spec-link">ESZ-19/20 Spec Sheet</a>
+        <a href="/products/s-series.html" class="spec-link">S-Series Spec Sheet</a>
+        <a href="/products/sks-14.html" class="spec-link">SKS-14 Spec Sheet</a>
+      </div>
     </div>
     <div class="prod-card fu d3">
       <div class="prod-icon">H</div>
