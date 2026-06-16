@@ -369,10 +369,10 @@ h2.s-title .g { color: var(--gold); }
 
 /* ─── CERTS BAR ─── */
 .certs-bar {
-  background: var(--charcoal);
-  padding: 2.75rem 4rem;
-  border-top: 1px solid rgba(29,168,199,.1);
-  border-bottom: 1px solid rgba(29,168,199,.1);
+  background: var(--off-white);
+  padding: 2.5rem 4rem;
+  border-top: 3px solid var(--teal);
+  border-bottom: 3px solid var(--teal);
 }
 .certs-inner {
   max-width: 1100px;
@@ -380,38 +380,36 @@ h2.s-title .g { color: var(--gold); }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.4rem;
 }
 .certs-label {
   font-family: var(--font-mono);
-  font-size: .6rem;
+  font-size: .58rem;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--steel-gray);
+  color: var(--charcoal);
+  opacity: .45;
 }
 .certs-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.75rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 .cert-badge {
-  background: rgba(255,255,255,.97);
-  border: 1px solid rgba(29,168,199,.18);
-  padding: .7rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color .25s, transform .25s, box-shadow .25s;
+  opacity: .88;
+  transition: opacity .2s, transform .2s;
 }
 .cert-badge:hover {
-  border-color: rgba(29,168,199,.55);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 24px rgba(29,168,199,.12);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 .cert-badge img {
-  height: 72px;
+  height: 76px;
   width: auto;
   display: block;
 }
@@ -637,9 +635,9 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
   section { padding: 5rem 1.5rem; }
   .about-section { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 1.5rem; }
   .owner-photo-wrap img { height: 300px; }
-  .certs-bar { padding: 2.25rem 1.5rem; }
-  .certs-row { gap: 1rem; }
-  .cert-badge img { height: 56px; }
+  .certs-bar { padding: 2rem 1.5rem; }
+  .certs-row { gap: 1.5rem; }
+  .cert-badge img { height: 58px; }
   .cta-section { padding: 5rem 1.5rem; }
   .form-section { padding: 5rem 1.5rem; }
 
