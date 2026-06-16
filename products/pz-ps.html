@@ -127,7 +127,7 @@ footer img{height:32px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.35
       <div class="diag-block">
         <div class="diag-label">PZ — Z-Section</div>
         <svg class="spec-svg" viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg">
-          <!-- left interlock -->
+          <!-- left hook interlock -->
           <path class="pa" d="M 48,218 C 28,218 28,198 48,198"/>
           <!-- bottom flange -->
           <line class="pl" x1="48" y1="218" x2="136" y2="218"/>
@@ -144,8 +144,8 @@ footer img{height:32px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.35
           <!-- top flange -->
           <line class="pl" x1="324" y1="55" x2="412" y2="55"/>
           <line class="pl" x1="316" y1="38" x2="412" y2="38"/>
-          <!-- right interlock -->
-          <path class="pa" d="M 412,38 C 432,38 432,58 412,58"/>
+          <!-- right ball interlock -->
+          <circle class="pa" cx="425" cy="48" r="13"/>
           <!-- tf label -->
           <line class="dl" x1="414" y1="38" x2="434" y2="28"/>
           <text class="dlabel" x="438" y="26" text-anchor="start">tf = 0.50"</text>
@@ -174,16 +174,17 @@ footer img{height:32px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.35
           <!-- left ball interlock -->
           <circle class="pa" cx="68" cy="80" r="32"/>
           <circle cx="68" cy="80" r="8" fill="rgba(29,168,199,.2)" stroke="var(--teal)" stroke-width="1.5"/>
-          <!-- right socket interlock -->
-          <path class="pa" d="M 360,46 C 406,46 406,114 360,114"/>
+          <!-- right ball interlock -->
+          <circle class="pa" cx="392" cy="80" r="32"/>
+          <circle cx="392" cy="80" r="8" fill="rgba(29,168,199,.2)" stroke="var(--teal)" stroke-width="1.5"/>
           <!-- tw label -->
           <line class="dl" x1="230" y1="68" x2="230" y2="50"/>
           <text class="dlabel" x="234" y="46" text-anchor="start">tw = 0.42–0.50"</text>
           <!-- w label -->
-          <line class="dl" x1="36" y1="130" x2="392" y2="130"/>
+          <line class="dl" x1="36" y1="130" x2="424" y2="130"/>
           <line class="dl" x1="36" y1="80" x2="36" y2="136"/>
-          <line class="dl" x1="392" y1="80" x2="392" y2="136"/>
-          <text class="dlabel" x="214" y="148" text-anchor="middle">w = 18.0 in (457 mm)</text>
+          <line class="dl" x1="424" y1="80" x2="424" y2="136"/>
+          <text class="dlabel" x="230" y="148" text-anchor="middle">w = 18.0 in (457 mm)</text>
         </svg>
       </div>
     </div>
