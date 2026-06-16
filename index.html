@@ -367,53 +367,6 @@ h2.s-title .g { color: var(--gold); }
   letter-spacing: 0.1em; margin-top: 0.6rem;
 }
 
-/* ─── CERTS BAR ─── */
-.certs-bar {
-  background: var(--off-white);
-  padding: 2.5rem 4rem;
-  border-top: 3px solid var(--teal);
-  border-bottom: 3px solid var(--teal);
-}
-.certs-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.4rem;
-}
-.certs-label {
-  font-family: var(--font-mono);
-  font-size: .58rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--charcoal);
-  opacity: .45;
-}
-.certs-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
-.cert-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: .88;
-  transition: opacity .2s, transform .2s;
-}
-.cert-badge:hover {
-  opacity: 1;
-  transform: translateY(-2px);
-}
-.cert-badge img {
-  height: 76px;
-  width: auto;
-  display: block;
-}
-
 /* ─── OWNER PHOTO ─── */
 .owner-photo-wrap {
   position: relative;
@@ -635,9 +588,6 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
   section { padding: 5rem 1.5rem; }
   .about-section { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 1.5rem; }
   .owner-photo-wrap img { height: 300px; }
-  .certs-bar { padding: 2rem 1.5rem; }
-  .certs-row { gap: 1.5rem; }
-  .cert-badge img { height: 58px; }
   .cta-section { padding: 5rem 1.5rem; }
   .form-section { padding: 5rem 1.5rem; }
 
@@ -768,30 +718,6 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
     <div class="ticker-item"><span class="tick-dot"></span><span class="tick-accent">Material Supplier Only — Not an Engineering Firm</span></div>
   </div>
 </div>
-
-<!-- ═══ CERTIFICATIONS ═══ -->
-<section class="certs-bar" id="certifications">
-  <div class="certs-inner">
-    <div class="certs-label">Verified Certifications &amp; Registrations</div>
-    <div class="certs-row">
-      <div class="cert-badge">
-        <img src="/assets/images/SBA WOSB.png" alt="SBA WOSB Certified — Woman-Owned Small Business">
-      </div>
-      <div class="cert-badge">
-        <img src="/assets/images/SBA Veteran.png" alt="SBA Veteran-Owned Certified">
-      </div>
-      <div class="cert-badge">
-        <img src="/assets/images/SBA Disabled.png" alt="SBA Service-Disabled Veteran-Owned Certified">
-      </div>
-      <div class="cert-badge">
-        <img src="/assets/images/WBENC.png" alt="WBENC Certified Women's Business Enterprise">
-      </div>
-      <div class="cert-badge">
-        <img src="/assets/images/NaV.png" alt="Service-Disabled Veteran's Business">
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ DIFFERENTIATORS ═══ -->
 <section class="diff-section">
