@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Specifications | Bennett Steel Supply</title>
+<link rel="icon" href="/assets/logo/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#1DA8C7;--gold:#F5C842;--off-white:#F4F1EB;
+  --steel-gray:#8A9299;--charcoal:#1A1C1E;--near-black:#0D0F10;
+  --fd:'Barlow Condensed','Arial Narrow',sans-serif;
+  --fb:'Barlow','Arial',sans-serif;
+  --fm:'Space Mono','Courier New',monospace;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--near-black);color:var(--off-white);font-family:var(--fb);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(10,12,13,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(29,168,199,.15)}
+.nav-logo{display:flex;align-items:center;gap:.6rem;font-family:var(--fd);font-size:1.15rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--off-white);text-decoration:none}
+.nav-logo img{height:30px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.4))}
+.nav-logo span{color:var(--teal)}
+.nav-back{font-family:var(--fm);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-gray);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--teal)}
+
+/* ── HERO ── */
+.hero{padding:8rem 3rem 4.5rem;background:linear-gradient(135deg,#0D0F10 0%,#0F1820 55%,#0B1C28 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(29,168,199,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(29,168,199,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:860px}
+.type-badge{font-family:var(--fm);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(29,168,199,.35);padding:.3rem .85rem;display:inline-block;margin-bottom:1.2rem}
+h1.spec-h1{font-family:var(--fd);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;text-transform:uppercase;line-height:.93;color:var(--off-white);margin-bottom:.75rem}
+h1.spec-h1 .t{color:var(--teal)}
+.spec-sub{font-size:.98rem;color:var(--steel-gray);margin-bottom:2rem;line-height:1.65;max-width:580px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-inner>*{animation:fadeUp .6s ease both}
+.hero-inner .type-badge{animation-delay:0s}
+.hero-inner h1{animation-delay:.1s}
+.hero-inner .spec-sub{animation-delay:.2s}
+
+/* ── CONTENT ── */
+.spec-content{max-width:960px;margin:0 auto;padding:4rem 3rem 6rem}
+
+/* Category blocks */
+.cat-block{margin-bottom:4.5rem}
+.cat-label{font-family:var(--fm);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.cat-title{font-family:var(--fd);font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--off-white);margin-bottom:.4rem}
+.cat-desc{font-size:.9rem;color:var(--steel-gray);margin-bottom:2rem;line-height:1.6}
+.cat-divider{width:100%;height:1px;background:rgba(29,168,199,.15);margin-bottom:2rem}
+
+/* Sub-group label */
+.sub-group{margin-bottom:2.5rem}
+.sub-label{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-gray);border-left:2px solid var(--teal);padding-left:.6rem;margin-bottom:1rem}
+
+/* H-Pile size list */
+.hp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.5rem}
+.hp-size{font-family:var(--fm);font-size:.72rem;letter-spacing:.06em;color:var(--off-white);background:rgba(255,255,255,.04);border:1px solid rgba(29,168,199,.12);padding:.55rem .85rem;text-align:center}
+
+/* Spec rows */
+.spec-row{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1rem;border-bottom:1px solid rgba(255,255,255,.05);gap:1rem;flex-wrap:wrap}
+.spec-row:first-child{border-top:1px solid rgba(255,255,255,.05)}
+.spec-row:hover{background:rgba(29,168,199,.04)}
+.spec-name{display:flex;align-items:center;gap:.65rem;font-family:var(--fd);font-size:1.15rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--off-white)}
+.badge-foreign{font-family:var(--fm);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,200,66,.35);padding:.18rem .5rem;line-height:1}
+.badge-cr{font-family:var(--fm);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:var(--steel-gray);border:1px solid rgba(138,146,153,.3);padding:.18rem .5rem;line-height:1}
+.spec-actions{display:flex;gap:.65rem;align-items:center}
+
+/* Buttons */
+.btn-dl{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.1rem;border:1px solid rgba(138,146,153,.25);color:rgba(138,146,153,.45);background:none;cursor:not-allowed;white-space:nowrap;position:relative}
+.btn-dl::after{content:'Coming Soon';position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--charcoal);color:var(--steel-gray);font-family:var(--fm);font-size:.52rem;letter-spacing:.06em;padding:.3rem .6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;border:1px solid rgba(29,168,199,.15)}
+.btn-dl:hover::after{opacity:1}
+.btn-email{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.1rem;border:1px solid var(--teal);color:var(--teal);background:none;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.btn-email:hover{background:var(--teal);color:var(--near-black)}
+
+/* HP note */
+.hp-note{font-family:var(--fm);font-size:.65rem;letter-spacing:.06em;color:var(--steel-gray);margin-bottom:1.25rem;line-height:1.6}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(13,15,16,.88);z-index:500;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--charcoal);border:1px solid rgba(29,168,199,.25);max-width:480px;width:100%;padding:2.5rem;position:relative;animation:fadeUp .3s ease both}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--steel-gray);font-size:1.25rem;cursor:pointer;line-height:1;transition:color .2s}
+.modal-close:hover{color:var(--off-white)}
+.modal-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
+.modal-title{font-family:var(--fd);font-size:1.6rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--off-white);margin-bottom:.35rem}
+.modal-sheet-name{font-family:var(--fm);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1.75rem}
+.modal form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.field{display:flex;flex-direction:column;gap:.35rem}
+.field label{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-gray)}
+.field input{background:rgba(255,255,255,.05);border:1px solid rgba(29,168,199,.2);color:var(--off-white);font-family:var(--fb);font-size:.9rem;padding:.65rem .85rem;outline:none;transition:border-color .2s}
+.field input:focus{border-color:var(--teal)}
+.field input::placeholder{color:rgba(138,146,153,.5)}
+.modal-note{font-size:.8rem;color:var(--steel-gray);line-height:1.55}
+.btn-submit{font-family:var(--fd);font-size:1rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;background:var(--teal);color:var(--near-black);border:none;cursor:pointer;transition:background .2s;margin-top:.25rem}
+.btn-submit:hover{background:var(--teal-mid, #2BBDD6)}
+
+/* Success state */
+.modal-success{display:none;text-align:center;padding:1.5rem 0}
+.modal-success.show{display:block}
+.modal-form-wrap.hide{display:none}
+.success-icon{font-size:2.5rem;margin-bottom:1rem}
+.success-msg{font-family:var(--fd);font-size:1.4rem;font-weight:900;text-transform:uppercase;color:var(--off-white);margin-bottom:.5rem}
+.success-sub{font-size:.88rem;color:var(--steel-gray);line-height:1.6}
+
+/* ── FOOTER ── */
+footer{background:var(--near-black);border-top:1px solid rgba(29,168,199,.1);padding:1.8rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+footer img{height:32px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.35))}
+.foot-info{font-family:var(--fm);font-size:.58rem;color:var(--steel-gray);letter-spacing:.05em;line-height:1.7}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav,footer{padding:1rem 1.5rem}
+  .hero{padding:6rem 1.5rem 3rem}
+  .spec-content{padding:2.5rem 1.5rem 4rem}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .spec-row{flex-direction:column;align-items:flex-start}
+  .spec-actions{width:100%;justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/assets/logo/ReelSteelLogo.png" alt="Bennett Steel Supply">Bennett <span>Steel</span> Supply</a>
+  <a class="nav-back" href="/#products">← Products</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="type-badge">Bennett Steel Supply</div>
+    <h1 class="spec-h1">Product<br><span class="t">Specifications</span></h1>
+    <p class="spec-sub">Browse available section types below. Download spec sheets directly or request one by email — we'll send it straight to your inbox.</p>
+  </div>
+</section>
+
+<div class="spec-content">
+
+  <!-- ── H-PILES ── -->
+  <div class="cat-block">
+    <div class="cat-label">Structural</div>
+    <div class="cat-title">H-Piles</div>
+    <p class="cat-desc">Wide-flange bearing piles driven to refusal or to a specified depth. Available in HP 8" through 14" nominal depths.</p>
+    <div class="cat-divider"></div>
+    <p class="hp-note">Spec sheets not required — contact us directly for availability and pricing on any section.</p>
+    <div class="hp-grid">
+      <div class="hp-size">HP 8×36</div>
+      <div class="hp-size">HP 10×42</div>
+      <div class="hp-size">HP 10×57</div>
+      <div class="hp-size">HP 12×53</div>
+      <div class="hp-size">HP 12×63</div>
+      <div class="hp-size">HP 12×74</div>
+      <div class="hp-size">HP 14×73</div>
+      <div class="hp-size">HP 14×89</div>
+      <div class="hp-size">HP 14×102</div>
+      <div class="hp-size">HP 14×117</div>
+    </div>
+  </div>
+
+  <!-- ── STEEL SHEET PILES ── -->
+  <div class="cat-block">
+    <div class="cat-label">Sheet Piling</div>
+    <div class="cat-title">Steel Sheet Piles</div>
+    <p class="cat-desc">Interlocking sections for earth retention, cofferdams, and permanent walls. Available in hot rolled and cold rolled profiles.</p>
+    <div class="cat-divider"></div>
+
+    <div class="sub-group">
+      <div class="sub-label">Hot Rolled</div>
+      <div class="spec-row">
+        <div class="spec-name">PZC</div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('PZC')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">AZ <span class="badge-foreign">Foreign</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('AZ')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">PZ</div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('PZ')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">ESZ <span class="badge-foreign">Foreign</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('ESZ')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">ZZ <span class="badge-foreign">Foreign</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('ZZ')">Email It to Me</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-group">
+      <div class="sub-label">Cold Rolled</div>
+      <div class="spec-row">
+        <div class="spec-name">L <span class="badge-cr">Cold Rolled</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('L Series')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">Z <span class="badge-cr">Cold Rolled</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('Z Series')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">EZ <span class="badge-cr">Cold Rolled</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('EZ Series')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">XZ <span class="badge-cr">Cold Rolled</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('XZ Series')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">DZ <span class="badge-cr">Cold Rolled</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('DZ Series')">Email It to Me</button>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-name">JZ <span class="badge-cr">Cold Rolled</span></div>
+        <div class="spec-actions">
+          <button class="btn-dl">Download PDF</button>
+          <button class="btn-email" onclick="openModal('JZ Series')">Email It to Me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FLAT / PAN / TRENCH ── -->
+  <div class="cat-block">
+    <div class="cat-label">Flat &amp; Trench</div>
+    <div class="cat-title">Flat / Pan / Trench Sheet Piles</div>
+    <p class="cat-desc">Lighter-duty sections for trench shoring, utility work, and shallow excavations. Flat interlock profiles with lower section modulus.</p>
+    <div class="cat-divider"></div>
+
+    <div class="spec-row">
+      <div class="spec-name">PS</div>
+      <div class="spec-actions">
+        <button class="btn-dl">Download PDF</button>
+        <button class="btn-email" onclick="openModal('PS')">Email It to Me</button>
+      </div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-name">S <span class="badge-cr">Cold Rolled</span></div>
+      <div class="spec-actions">
+        <button class="btn-dl">Download PDF</button>
+        <button class="btn-email" onclick="openModal('S Series')">Email It to Me</button>
+      </div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-name">KD <span class="badge-cr">Cold Rolled</span></div>
+      <div class="spec-actions">
+        <button class="btn-dl">Download PDF</button>
+        <button class="btn-email" onclick="openModal('KD Series')">Email It to Me</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /spec-content -->
+
+<!-- ── EMAIL MODAL ── -->
+<div class="modal-overlay" id="modal" onclick="closeOnBackdrop(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+
+    <div class="modal-form-wrap" id="modalFormWrap">
+      <div class="modal-label">Spec Sheet Request</div>
+      <div class="modal-title">Email It to Me</div>
+      <div class="modal-sheet-name" id="modalSheetName"></div>
+
+      <form name="spec-request" method="POST" netlify netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="spec-request">
+        <input type="hidden" name="bot-field" style="display:none">
+        <input type="hidden" name="spec-sheet" id="specSheetField">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="first-name" placeholder="Jane" required>
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="last-name" placeholder="Smith" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(321) 555-0100">
+        </div>
+
+        <p class="modal-note">We'll email you the spec sheet and may follow up to discuss your project needs.</p>
+
+        <button type="submit" class="btn-submit">Send Me the Spec Sheet →</button>
+      </form>
+    </div>
+
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">✓</div>
+      <div class="success-msg">Request Received</div>
+      <p class="success-sub">April will send your spec sheet shortly. If you have an urgent need, call us directly at <strong>321-464-2283</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <img src="/assets/logo/ReelSteelLogo.png" alt="Bennett Steel Supply">
+  <div class="foot-info">321-464-2283 &nbsp;&middot;&nbsp; ABennett.ReelSteel@gmail.com &nbsp;&middot;&nbsp; www.reelsteelusa.com</div>
+</footer>
+
+<script>
+function openModal(sheetName) {
+  document.getElementById('modalSheetName').textContent = sheetName + ' Spec Sheet';
+  document.getElementById('specSheetField').value = sheetName;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => {
+    document.getElementById('modalFormWrap').classList.remove('hide');
+    document.getElementById('modalSuccess').classList.remove('show');
+  }, 300);
+}
+
+function closeOnBackdrop(e) {
+  if (e.target === document.getElementById('modal')) closeModal();
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    document.getElementById('modalFormWrap').classList.add('hide');
+    document.getElementById('modalSuccess').classList.add('show');
+  })
+  .catch(() => {
+    document.getElementById('modalFormWrap').classList.add('hide');
+    document.getElementById('modalSuccess').classList.add('show');
+  });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>

@@ -278,7 +278,10 @@ h2.s-title .g { color: var(--gold); }
   border-left: 2px solid var(--teal);
   padding-left: .75rem;
   display: inline-block;
+  text-decoration: none;
+  transition: letter-spacing .2s, opacity .2s;
 }
+a.products-sub:hover { letter-spacing: .22em; opacity: .8; }
 .products-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem; margin-top: 4rem;
@@ -826,7 +829,7 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
 <section class="products-section" id="products">
   <div class="s-label fu">What We Supply</div>
   <h2 class="s-title fu d1">Steel Sheet Piling<br><span class="t">&amp; Other Structural Steel</span></h2>
-  <p class="products-sub fu d2">Product Specifications</p>
+  <a href="/products/specifications.html" class="products-sub fu d2">Product Specifications →</a>
 
   <div class="products-grid">
     <!-- Larssen Interlock -->
