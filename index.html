@@ -398,22 +398,21 @@ h2.s-title .g { color: var(--gold); }
   flex-wrap: wrap;
 }
 .cert-badge {
-  background: rgba(255,255,255,.96);
-  padding: .55rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(29,168,199,.15);
-  transition: border-color .2s, transform .2s;
+  transition: transform .2s, opacity .2s;
+  opacity: .85;
 }
 .cert-badge:hover {
-  border-color: rgba(29,168,199,.5);
   transform: translateY(-2px);
+  opacity: 1;
 }
 .cert-badge img {
-  height: 68px;
+  height: 72px;
   width: auto;
   display: block;
+  filter: drop-shadow(0 0 8px rgba(29,168,199,.12));
 }
 
 /* ─── OWNER PHOTO ─── */
