@@ -31,7 +31,7 @@
 ## Client
 
 **April Bennett** — Founder & Owner, Bennett Steel Supply  
-Malabar, FL · hello@reelsteel.com  
+Malabar, FL · abennett.reelsteel@gmail.com · 321-464-2283  
 Woman-Owned (WOSB), Veteran-Owned (SDVOSB), VBE, WBE, SAM.gov registered  
 Tagline: *"Your Problem is MY Business — Big or Small, We Take Care of Them All."*  
 Faith anchor: Joshua 24:15
@@ -45,10 +45,19 @@ Images will arrive from client. When they do:
 
 ## Form Backend
 
-The quote form has no backend yet. To activate Netlify Forms:
-1. Add `name="quote-request" netlify` attributes to the `<form>` tag
-2. Add a hidden `<input type="hidden" name="form-name" value="quote-request">`
-3. Netlify will auto-detect and route submissions to the dashboard
+Netlify Forms is active. Two forms are wired up:
+- `quote-request` — homepage quote form (`index.html`), plain HTML POST
+- `spec-request` — spec sheet modal (`products/specifications.html`), AJAX POST via `handleSubmit()`
+
+Both use `netlify-honeypot="bot-field"` with a matching hidden `bot-field` input for spam filtering.
+
+Each `<form>` needs `method="POST"`, the `netlify` attribute, and a hidden
+`<input type="hidden" name="form-name" value="...">` matching its `name`.
+Omitting `method="POST"` silently breaks capture — the browser falls back to
+GET and Netlify records nothing.
+
+Submissions land in the Netlify dashboard and notify **abennett.reelsteel@gmail.com**
+(set under Project configuration → Forms → Form submission notifications, not in the markup).
 
 ## Mobile Breakpoints
 

@@ -283,13 +283,13 @@ h2.s-title .g { color: var(--gold); }
 }
 a.products-sub:hover { letter-spacing: .22em; opacity: .8; }
 .products-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem; margin-top: 4rem;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem; margin-top: 4rem;
 }
 .prod-card {
   background: var(--near-black);
   border: 1px solid rgba(29,168,199,0.12);
-  padding: 2.8rem 2.2rem 2.4rem;
+  padding: 2.4rem 1.7rem 2rem;
   position: relative; overflow: hidden;
   transition: all 0.3s; cursor: pointer;
   display: flex; flex-direction: column;
@@ -301,17 +301,30 @@ a.products-sub:hover { letter-spacing: .22em; opacity: .8; }
 }
 .prod-card:hover::after { transform: scaleX(1); }
 .prod-icon {
-  font-family: var(--font-display); font-size: 3.2rem; font-weight: 900;
-  color: var(--teal); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em;
+  font-family: var(--font-display); font-size: 2.9rem; font-weight: 900;
+  color: var(--teal); line-height: 1; margin-bottom: 1.1rem; letter-spacing: -0.02em;
 }
 .prod-name {
-  font-family: var(--font-display); font-size: 1.2rem; font-weight: 800;
-  text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--off-white); margin-bottom: 1rem;
+  font-family: var(--font-display); font-size: 1.05rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.25;
+  color: var(--off-white); margin-bottom: 0.9rem;
 }
 .prod-specs {
-  font-family: var(--font-mono); font-size: 0.7rem;
-  color: var(--steel-gray); line-height: 2; flex: 1;
+  font-family: var(--font-mono); font-size: 0.66rem;
+  color: var(--steel-gray); line-height: 1.9; flex: 1;
+}
+.prod-series {
+  display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.85rem;
+}
+.prod-series span {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.05em;
+  color: var(--off-white); background: rgba(29,168,199,0.08);
+  border: 1px solid rgba(29,168,199,0.18); padding: 0.18rem 0.42rem;
+}
+.prod-series span.f { color: var(--gold); border-color: rgba(245,200,66,0.25); background: rgba(245,200,66,0.06); }
+.prod-note {
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.04em;
+  color: var(--steel-gray); line-height: 1.8;
 }
 .prod-tag {
   display: inline-block; margin-top: 1.5rem;
@@ -553,6 +566,8 @@ footer {
   font-family: var(--font-mono); font-size: 0.63rem; color: var(--steel-gray);
   letter-spacing: 0.06em; margin-top: 0.35rem;
 }
+.foot-sub a { color: var(--steel-gray); text-decoration: none; transition: color 0.2s; }
+.foot-sub a:hover { color: var(--teal); }
 .foot-certs { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
 .foot-cert {
   font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em;
@@ -618,6 +633,11 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
   color: var(--off-white); text-decoration: none; transition: color 0.2s;
 }
 .nav-mobile-link:hover { color: var(--teal); }
+
+/* ─── NARROW DESKTOP ≤ 1100px: 4-col products would crowd ─── */
+@media (max-width: 1100px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ─── TABLET ≤ 768px ─── */
 @media (max-width: 768px) {
@@ -832,82 +852,73 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
   <a href="/products/specifications.html" class="products-sub fu d2">Product Specifications →</a>
 
   <div class="products-grid">
-    <!-- Larssen Interlock -->
+    <!-- Hot-Rolled Sheet Piles -->
     <div class="prod-card fu d1">
-      <div class="prod-icon">AZ</div>
-      <div class="prod-name">Larssen Interlock</div>
+      <div class="prod-icon">HR</div>
+      <div class="prod-name">Hot-Rolled<br>Sheet Piles</div>
+      <div class="prod-series">
+        <span>PZC</span><span class="f">AZ</span><span>PZ</span><span class="f">ESZ</span><span class="f">ZZ</span>
+      </div>
       <div class="prod-specs">
-        AZ Series &nbsp;&bull;&nbsp; ESZ Series &nbsp;&bull;&nbsp; ZZ Profiles<br>
-        Hot Rolled &nbsp;&bull;&nbsp; Foreign Steel<br>
+        Ball &amp; socket and Larssen interlock<br>
+        Domestic &amp; foreign mill<br>
         A572 Grade 50 &amp; 60
       </div>
       <span class="prod-tag">New + Used / Rental</span>
       <div class="spec-links">
-        <a href="/products/esz-19-20.html" class="spec-link">ESZ-19/20 Spec Sheet</a>
+        <a href="/products/specifications.html#hot-rolled" class="spec-link">Hot-Rolled Spec Sheets</a>
       </div>
     </div>
-    <!-- Ball & Socket -->
+    <!-- Cold-Rolled Sheet Piles -->
     <div class="prod-card fu d2">
-      <div class="prod-icon">PZ</div>
-      <div class="prod-name">Ball &amp; Socket</div>
+      <div class="prod-icon">CR</div>
+      <div class="prod-name">Cold-Rolled<br>Sheet Piles</div>
+      <div class="prod-series">
+        <span>L</span><span>Z</span><span>EZ</span><span>XZ</span><span>DZ</span><span>JZ</span>
+      </div>
       <div class="prod-specs">
-        PZC &nbsp;&bull;&nbsp; PZ-22 / 27 / 35 / 40 &nbsp;&bull;&nbsp; PS<br>
-        Hot Rolled &nbsp;&bull;&nbsp; Domestic Steel<br>
+        Hook &amp; grip interlock<br>
+        Lighter sections, shorter lead times<br>
         A572 Grade 50 &amp; 60
       </div>
       <span class="prod-tag">New + Used / Rental</span>
       <div class="spec-links">
-        <a href="/products/pz-ps.html" class="spec-link">PZ &amp; PS Spec Sheet</a>
+        <a href="/products/specifications.html#cold-rolled" class="spec-link">Cold-Rolled Spec Sheets</a>
       </div>
     </div>
-    <!-- Hook & Grip -->
+    <!-- Flat / Pan / Trench Sheet Piles -->
     <div class="prod-card fu d3">
-      <div class="prod-icon">DZ</div>
-      <div class="prod-name">Hook &amp; Grip</div>
-      <div class="prod-specs">
-        DZ &nbsp;&bull;&nbsp; JZ &nbsp;&bull;&nbsp; EZ &nbsp;&bull;&nbsp; XZ &nbsp;&bull;&nbsp; Z Profiles<br>
-        Cold Rolled &nbsp;&bull;&nbsp; Foreign &amp; Domestic<br>
-        Incl. Shoreline Steel Profiles
+      <div class="prod-icon">FP</div>
+      <div class="prod-name">Flat / Pan / Trench<br>Sheet Piles</div>
+      <div class="prod-series">
+        <span>PS</span><span>S</span><span>KD</span>
       </div>
-      <span class="prod-tag">New + Used / Rental</span>
-    </div>
-    <!-- Lightweight / Trench Sheets -->
-    <div class="prod-card fu d4">
-      <div class="prod-icon">S</div>
-      <div class="prod-name">Lightweight / Trench Sheets</div>
       <div class="prod-specs">
-        S-64 &nbsp;&bull;&nbsp; S-80 &nbsp;&bull;&nbsp; KD-8 &nbsp;&bull;&nbsp; SKS-14<br>
-        Cold Rolled &nbsp;&bull;&nbsp; Foreign &amp; Domestic<br>
-        A572 Grade 50 &amp; 60
+        Flat interlock, lower section modulus<br>
+        Trench shoring &amp; utility work<br>
+        S and KD cold rolled
       </div>
       <span class="prod-tag">New + Used / Rental</span>
       <div class="spec-links">
-        <a href="/products/s-series.html" class="spec-link">S-Series Spec Sheet</a>
-        <a href="/products/sks-14.html" class="spec-link">SKS-14 Spec Sheet</a>
+        <a href="/products/specifications.html#flat-pan-trench" class="spec-link">Flat / Pan Spec Sheets</a>
       </div>
     </div>
-    <!-- H-Pile & Structural Steel -->
-    <div class="prod-card fu d5">
-      <div class="prod-icon">H</div>
-      <div class="prod-name">H-Pile &amp; Struct. Steel</div>
+    <!-- H-Piles -->
+    <div class="prod-card fu d4">
+      <div class="prod-icon">HP</div>
+      <div class="prod-name">H-Piles</div>
+      <div class="prod-series">
+        <span>HP 8&Prime;</span><span>HP 10&Prime;</span><span>HP 12&Prime;</span><span>HP 14&Prime;</span>
+      </div>
       <div class="prod-specs">
-        Misc. Structural Steel<br>
-        ASTM A572 Grade 50 &amp; 60<br>
-        Project-specific sourcing
+        Wide-flange bearing piles<br>
+        HP 8&Prime; through 14&Prime; nominal depths<br>
+        ASTM A572 Grade 50 &amp; 60
       </div>
       <span class="prod-tag">Purchase</span>
-    </div>
-    <!-- Accessories & Rental -->
-    <div class="prod-card fu d6">
-      <div class="prod-icon">&#9881;</div>
-      <div class="prod-name">Accessories &amp; Rental</div>
-      <div class="prod-specs">
-        Connectors &nbsp;&bull;&nbsp; Walers<br>
-        Hardware<br>
-        Equipment Rental<br>
-        Logistics Coordination
+      <div class="spec-links">
+        <a href="/products/specifications.html#h-piles" class="spec-link">Available Sections</a>
       </div>
-      <span class="prod-tag">Rental Available</span>
     </div>
   </div>
 </section>
@@ -991,8 +1002,9 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
   <div class="form-inner">
     <div class="s-label">Request a Quote</div>
     <h2 class="s-title" style="font-size:2.4rem">Get Pricing for<br><span class="t">Your Project</span></h2>
-    <form name="quote-request" netlify>
+    <form name="quote-request" method="POST" netlify netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="quote-request">
+    <input type="hidden" name="bot-field" style="display:none">
     <div class="form-grid">
       <div>
         <label class="f-label">Full Name *</label>
@@ -1088,7 +1100,7 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
 <footer>
   <div>
     <img src="/assets/logo/ReelSteelLogo.png" alt="Bennett Steel Supply logo" class="foot-logo-img">
-    <div class="foot-sub">Malabar, FL &nbsp;&middot;&nbsp; Nationwide Delivery &nbsp;&middot;&nbsp; hello@reelsteel.com</div>
+    <div class="foot-sub">Malabar, FL &nbsp;&middot;&nbsp; Nationwide Delivery &nbsp;&middot;&nbsp; <a href="mailto:abennett.reelsteel@gmail.com">abennett.reelsteel@gmail.com</a></div>
   </div>
   <div class="foot-certs" id="certifications">
     <div class="foot-cert">WOSB</div>

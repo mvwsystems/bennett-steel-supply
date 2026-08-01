@@ -21,7 +21,6 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No SPA catch-all here. This is a multi-page static site — a `from = "/*"`
+# rule returned the homepage with a 200 for every missing URL, hiding broken
+# links and letting search engines index phantom pages.
