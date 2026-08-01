@@ -73,6 +73,11 @@ h1.spec-h1 .t{color:var(--teal)}
 .btn-dl{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.1rem;border:1px solid rgba(138,146,153,.25);color:rgba(138,146,153,.45);background:none;cursor:not-allowed;white-space:nowrap;position:relative}
 .btn-dl::after{content:'Coming Soon';position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--charcoal);color:var(--steel-gray);font-family:var(--fm);font-size:.52rem;letter-spacing:.06em;padding:.3rem .6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;border:1px solid rgba(29,168,199,.15)}
 .btn-dl:hover::after{opacity:1}
+/* Live download: an <a> with a real PDF behind it. Gold reads as "get the file",
+   teal as "ask us for it", so the two actions stay distinguishable at a glance. */
+a.btn-dl{border-color:var(--gold);color:var(--gold);cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,color .2s}
+a.btn-dl:hover{background:var(--gold);color:var(--near-black)}
+a.btn-dl::after{content:none}
 .btn-email{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.1rem;border:1px solid var(--teal);color:var(--teal);background:none;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
 .btn-email:hover{background:var(--teal);color:var(--near-black)}
 
@@ -191,14 +196,14 @@ footer img{height:32px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.35
       <div class="spec-row">
         <div class="spec-name">PZ</div>
         <div class="spec-actions">
-          <button class="btn-dl">Download PDF</button>
+          <a class="btn-dl" href="/assets/spec-sheets/pz-ps.pdf" download>Download PDF</a>
           <button class="btn-email" onclick="openModal('PZ')">Email It to Me</button>
         </div>
       </div>
       <div class="spec-row">
         <div class="spec-name">ESZ <span class="badge-foreign">Foreign</span></div>
         <div class="spec-actions">
-          <button class="btn-dl">Download PDF</button>
+          <a class="btn-dl" href="/assets/spec-sheets/esz.pdf" download>Download PDF</a>
           <button class="btn-email" onclick="openModal('ESZ')">Email It to Me</button>
         </div>
       </div>
@@ -268,14 +273,14 @@ footer img{height:32px;width:auto;filter:drop-shadow(0 0 6px rgba(29,168,199,.35
     <div class="spec-row">
       <div class="spec-name">PS</div>
       <div class="spec-actions">
-        <button class="btn-dl">Download PDF</button>
+        <a class="btn-dl" href="/assets/spec-sheets/pz-ps.pdf" download>Download PDF</a>
         <button class="btn-email" onclick="openModal('PS')">Email It to Me</button>
       </div>
     </div>
     <div class="spec-row">
       <div class="spec-name">S <span class="badge-cr">Cold Rolled</span></div>
       <div class="spec-actions">
-        <button class="btn-dl">Download PDF</button>
+        <a class="btn-dl" href="/assets/spec-sheets/s.pdf" download>Download PDF</a>
         <button class="btn-email" onclick="openModal('S Series')">Email It to Me</button>
       </div>
     </div>
