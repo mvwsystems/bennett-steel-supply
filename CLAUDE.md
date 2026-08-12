@@ -61,9 +61,20 @@ Submissions land in the Netlify dashboard and notify **abennett.reelsteel@gmail.
 
 ## Mobile Breakpoints
 
-Not yet implemented. Priority order when building:
-1. 768px — tablet: collapse nav links to hamburger, stack 2-col grids to 1-col
-2. 480px — mobile: reduce hero font sizes, full-width buttons, single-col form
+Implemented in `index.html`, largest to smallest:
+
+1. **1250px** — tighten nav padding, link gaps, and button sizes
+2. **1100px** — products grid 4-col → 2-col
+3. **1000px** — nav links + quote button → hamburger overlay (the links can't
+   shrink past their own text width, so they overlap the logo below this)
+4. **768px** — tablet: stack 2-col grids, nav call button drops to icon only
+5. **480px** — mobile: smaller hero type, full-width buttons, single-col form,
+   smaller wordmark
+6. **360px** — small mobile: shrink wordmark again so it clears the call button
+
+Chrome headless clamps its viewport at 500px wide, so screenshots below that
+are a *crop* of a 500px render, not a real narrow layout. Test narrow widths by
+loading the page in a fixed-width `<iframe>` instead.
 
 ## Sections (in order)
 
