@@ -679,10 +679,9 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
-  /* Keep one-tap calling in the bar, but drop to the icon so the logo fits */
-  .nav-actions { gap: 0.5rem; }
-  .nav-call { padding: 0.5rem 0.7rem; clip-path: none; font-size: 1.05rem; }
-  .nav-call-label { display: none; }
+  /* No call button in the bar on mobile — the Call Direct button in the
+     hamburger overlay covers click-to-call. */
+  .nav-call { display: none; }
 
   .hero {
     flex-direction: column; justify-content: center; align-items: flex-start;
@@ -709,9 +708,6 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
 /* ─── MOBILE ≤ 480px ─── */
 @media (max-width: 480px) {
   nav { padding: 1rem 1.25rem; }
-  /* Shrink the wordmark or logo + call + hamburger overflow the bar */
-  .nav-logo { font-size: 1rem; letter-spacing: 0.08em; gap: 0.5rem; }
-  .nav-logo-img { height: 28px; }
 
   .hero { padding: 6rem 1.25rem 4rem; }
   h1.hero-h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
@@ -737,14 +733,6 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
 
   footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; gap: 1.5rem; }
 }
-
-/* ─── SMALL MOBILE ≤ 360px ─── */
-@media (max-width: 360px) {
-  /* At this width the wordmark runs into the call button */
-  .nav-logo { font-size: 0.85rem; letter-spacing: 0.06em; }
-  .nav-logo-img { height: 24px; }
-  .nav-call { padding: 0.45rem 0.6rem; }
-}
 </style>
 </head>
 <body>
@@ -759,7 +747,7 @@ h1.hero-h1    { animation: heroIn 0.65s ease both 0.15s; }
     <li><a href="#quote">Contact</a></li>
   </ul>
   <div class="nav-actions">
-    <a class="nav-call" href="tel:+13214642283" aria-label="Call Bennett Steel Supply at 321-464-2283"><span class="nav-call-icon">&#9742;</span><span class="nav-call-label">Call Direct</span></a>
+    <a class="nav-call" href="tel:+13214642283" aria-label="Call Bennett Steel Supply at 321-464-2283"><span class="nav-call-icon">&#9742;&#xFE0E;</span><span class="nav-call-label">Call Direct</span></a>
     <button class="nav-cta" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
